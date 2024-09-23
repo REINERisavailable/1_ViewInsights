@@ -8,7 +8,7 @@ from word_cloud_analysis import generate_word_cloud
 from future_predictions import predict_future_stats, prepare_chart_data, create_custom_chart
 from upload_frequency_analysis import calculate_upload_frequency
 
-API_KEY = 'AIzaSyC55Qqa2qSsqEqKyvUnsnxH7XbFq9oZkBE'
+API_KEY = ''
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
 def load_css():
