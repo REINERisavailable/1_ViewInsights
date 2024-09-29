@@ -5,13 +5,13 @@ from collections import Counter
 import re
 import pandas as pd
 
-def generate_word_cloud(channel_id, api_key):
+def generate_word_cloud(channel_id, api_key, background_color='black'):
     youtube = build('youtube', 'v3', developerKey=api_key)
     video_ids = fetch_video_ids(youtube, channel_id)
     video_data = fetch_video_details(youtube, video_ids)
     all_words = preprocess_titles(video_data['title'])
     word_freq = Counter(all_words)
-    wordcloud = WordCloud(width=1600, height=800, background_color='black', colormap='viridis', stopwords=STOPWORDS, min_font_size=10).generate_from_frequencies(word_freq)
+    wordcloud = WordCloud(width=800, height=400, background_color=background_color, colormap='viridis', stopwords=STOPWORDS, min_font_size=10).generate_from_frequencies(word_freq)
     fig, ax = plt.subplots(figsize=(20, 10))
     ax.imshow(wordcloud, interpolation='bilinear')
     ax.axis('off')

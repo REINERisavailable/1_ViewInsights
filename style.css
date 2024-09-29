@@ -1,11 +1,11 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f2f6;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
     color: #1e1e1e;
 }
 
 .stApp {
-    max-width: 1200px;
+    max-width: 1440px; /* Increased from 1200px to 1440px (20% wider) */
     margin: 0 auto;
 }
 
@@ -38,22 +38,21 @@ h1, h2, h3 {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: white;
-    padding: 1rem 0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    color: #333;
     text-align: center;
+    padding: 10px 0;
 }
 
 .footer a {
-    color: #1e1e1e;
+    color: #0083B8;
     text-decoration: none;
-    margin: 0 1rem;
+    margin: 0 10px;
 }
 
 .footer a:hover {
     text-decoration: underline;
 }
-
 
 .sticky-header {
     position: fixed;

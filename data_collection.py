@@ -20,7 +20,11 @@ def collect_channel_data(api_key, channel_id, days=365):
         views = max(0, int(initial_views + i * view_change))
         data.append({'date': single_date.strftime('%Y-%m-%d'), 'subscribers': subscribers, 'views': views})
     df = pd.DataFrame(data)
-    csv_path = os.path.join('Streamlit_App', 'channel_data.csv')
+    
+    # Create the directory if it doesn't exist
+    os.makedirs('Streamlit_App', exist_ok=True)
+    
+    csv_path = os.path.join('Streamlit_App', f'{channel_id}_data.csv')
     df.to_csv(csv_path, index=False)
     return df
 
